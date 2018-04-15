@@ -56,7 +56,7 @@ class bulletBlock(Block):
         self.rect.x=self.true_x
         if self.rect.x>2500 or self.rect.x<-1800 or self.rect.y>3100 or self.rect.y<-1000:
             self.kill()
-            print("bullet suicide")
+            #print("bullet suicide")
 
 class grenade(bulletBlock):
     def __init__(self,color,x,y,width,height,speed_x,speed_y,damage,all_sprites,grenade_list,explosion_timer):
@@ -432,7 +432,7 @@ class player(Block):
         if self.djump > 0:
             self.change_y = -5.7
             self.djump -= 1
-            print("jumped")
+            #print("jumped")
     def crouch(self):
         if not self.crouching:
             self.height = 20
@@ -443,7 +443,7 @@ class player(Block):
             self.rect.x = x
             self.rect.y = y
             self.crouching = True
-            print("Crouching")
+            #print("Crouching")
     def stand(self,p_list):
         self.rect.y-= 20
         if len(pygame.sprite.spritecollide(self,p_list,False))==0:
@@ -456,9 +456,9 @@ class player(Block):
             self.rect = self.image.get_rect()
             self.rect.x = x
             self.rect.y = y
-            print("Standing")
+            #print("Standing")
         else:
-            print("Tried standing")
+            #print("Tried standing")
             self.tryStand=True
             self.rect.y+=20
     def reset(self,startPos,player1,player2,blink_red,blink_blue,bullet1_list,bullet2_list,startWeapon,draw_list,p_list,respawn_list):

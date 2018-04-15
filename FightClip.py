@@ -1,12 +1,12 @@
 """
 Jag ska definitivt rensa texten och kommentera mer, men detta far duga for nu
-
+Python 3.4.3
 Koray M Kaya
 """
 import pygame,pickle,FCobjects,FCweapons,FCcosmetics, os
 pygame.init()
 
-mapname="bigfight"
+mapname="space"
 
 #Deklarera farger
 BLACK = (0, 0, 0)
@@ -324,7 +324,7 @@ def keyPressed(key):
 #Oppnar banan som man laddade in tidigare, den laser av pickle filen och far reda pa blockens egenskaper
 #sedan skapar den blocken
 def loadMap():
-    print(map_info[0])
+    #print(map_info[0])
     try:guns_allowed = map_info[0][4]
     except:pass
     for i in range(1,len(map_info)):
@@ -362,8 +362,8 @@ def main():
     pygame.display.set_caption("Fight Clip")
     if guns_allowed:
         if startWeapon=="handGun":
-            player1.currWeapon=FCweapons.katana(player1,draw_list)
-            player2.currWeapon=FCweapons.lazerRifle(player2,draw_list)
+            player1.currWeapon=FCweapons.handGun(player1,draw_list)
+            player2.currWeapon=FCweapons.handGun(player2,draw_list)
     blink_red = 0
     blink_blue = 0
     loadMap()
